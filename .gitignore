@@ -1,0 +1,21 @@
+# Windows OS clutter
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Editor and IDE folders
+.vscode/
+.idea/
+
+# Test or scratch files
+scratch.*
+test.*
