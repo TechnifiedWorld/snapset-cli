@@ -1,7 +1,7 @@
 @echo off
 rem ============================================================
 rem  SnapSet by Technified World
-rem  Version : v1.0.0
+rem  Version : v1.1.0
 rem  Purpose : Single command launcher for Windows 11 network
 rem            and system settings pages
 rem  Usage   : snapset <command>
@@ -10,7 +10,7 @@ rem  Repo    : https://github.com/TechnifiedWorld/snapset
 rem ============================================================
 
 rem version -- single source of truth for version string
-set "ver=v1.0.0"
+set "ver=v1.1.0"
 
 rem setlocal restricts variable scope to this script only
 setlocal
@@ -78,6 +78,26 @@ rem ------------------------------------------------------------
 rem  SYSTEM SETTINGS
 rem ------------------------------------------------------------
 
+rem Display -- resolution, scale, refresh rate, multi-monitor layout
+if /i "%x%"=="ds"        start "" ms-settings:display                           & goto :end
+if /i "%x%"=="display"   start "" ms-settings:display                           & goto :end
+
+rem Power and sleep -- sleep timers, battery saver, power plan selection
+if /i "%x%"=="pw"        start "" ms-settings:powersleep                        & goto :end
+if /i "%x%"=="power"     start "" ms-settings:powersleep                        & goto :end
+
+rem Windows Update -- check, pause, or configure updates
+if /i "%x%"=="wu"        start "" ms-settings:windowsupdate                     & goto :end
+if /i "%x%"=="update"    start "" ms-settings:windowsupdate                     & goto :end
+
+rem Bluetooth -- pair and manage Bluetooth devices
+if /i "%x%"=="bt"        start "" ms-settings:bluetooth                         & goto :end
+if /i "%x%"=="bluetooth" start "" ms-settings:bluetooth                         & goto :end
+
+rem Services -- start, stop, and configure Windows services (elevation required for changes)
+if /i "%x%"=="sv"        start "" services.msc                                  & goto :end
+if /i "%x%"=="services"  start "" services.msc                                  & goto :end
+
 rem Environment Variables -- opens dialog directly, skips System Properties
 rem Uses rundll32 to call EditEnvironmentVariables from sysdm.cpl
 if /i "%x%"=="ev"        start "" rundll32.exe sysdm.cpl,EditEnvironmentVariables & goto :end
@@ -107,7 +127,7 @@ echo ============================================
 echo Usage: snapset ^<command^>
 echo.
 echo Short    Long         Opens
-echo -------  ----------   ----------------------------------------
+echo -------  -----------  ----------------------------------------
 echo n        network      Network ^& Internet
 echo h        hotspot      Mobile Hotspot settings
 echo wi       wifi         Wi-Fi settings
@@ -118,12 +138,18 @@ echo av       advanced     Advanced network settings
 echo et       ethernet     Ethernet ^(requires active wired adapter^)
 echo du       datausage    Data usage ^(via Advanced network settings^)
 echo ad       adapters     Adapter panel ^(DNS / protocol config^)
+echo ds       display      Display settings ^(resolution, scale, refresh^)
+echo pw       power        Power and sleep settings
+echo wu       update       Windows Update
+echo bt       bluetooth    Bluetooth devices
+echo sv       services     Windows Services ^(elevation required for changes^)
 echo ev       envars       Environment Variables ^(direct dialog^)
 echo.
 echo Tips:
 echo - DNS config: snapset ad ^> right-click adapter ^> Properties ^> IPv4
 echo - Wi-Fi advanced: snapset ad ^> right-click ^> Properties ^> Configure ^> Advanced
 echo - Data usage: snapset du ^> click Data usage tab
+echo - Services: snapset sv ^> run as Administrator for start/stop actions
 echo.
 pause
 endlocal
