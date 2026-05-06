@@ -27,6 +27,9 @@ SnapSet eliminates that friction. One short command opens the exact settings pag
 | Start > Settings > Network & Internet > Mobile Hotspot | `snapset h` |
 | Control Panel > Network Connections > Adapter Properties | `snapset ad` |
 | System Properties > Environment Variables | `snapset ev` |
+| Start > Settings > System > Display | `snapset ds` |
+| Start > Settings > System > Power & sleep | `snapset pw` |
+| Start > Settings > Windows Update | `snapset wu` |
 
 Works from a terminal, the Run dialog (`Win + R`), or a desktop shortcut. No installation required. A single `.bat` file is all it takes.
 
@@ -128,6 +131,11 @@ snapset envars
 
 | Short | Long | Opens |
 |-------|------|-------|
+| `ds` | `display` | Display settings (resolution, scale, refresh rate) |
+| `pw` | `power` | Power and sleep settings |
+| `wu` | `update` | Windows Update |
+| `bt` | `bluetooth` | Bluetooth devices |
+| `sv` | `services` | Windows Services (elevation required for changes) |
 | `ev` | `envars` | Environment Variables (direct dialog) |
 
 ---
@@ -150,6 +158,10 @@ Use `snapset du` to open Advanced network settings, then click the Data usage ta
 `snapset et` only opens successfully when an active wired adapter is detected.
 Windows 11 silently redirects to Settings Home when no wired adapter is present.
 
+**Windows Services**
+Use `snapset sv` to open the Services panel.
+Starting, stopping, or changing service startup type requires an elevated (Administrator) terminal or UAC prompt.
+
 ---
 
 ## Known limitations
@@ -158,6 +170,7 @@ Windows 11 silently redirects to Settings Home when no wired adapter is present.
 |---------|------------|
 | `du` / `datausage` | No dedicated URI on 25H2. Opens Advanced network settings. |
 | `et` / `ethernet` | Requires active wired adapter |
+| `sv` / `services` | Elevation required for start, stop, and configuration actions |
 
 ---
 
@@ -165,9 +178,11 @@ Windows 11 silently redirects to Settings Home when no wired adapter is present.
 
 | Status | Item |
 |--------|------|
-| `planned` | Add display settings commands |
-| `planned` | Add power settings commands |
-| `planned` | Add Bluetooth settings commands |
+| `done` | Add display settings commands |
+| `done` | Add power settings commands |
+| `done` | Add Bluetooth settings commands |
+| `done` | Add Windows Update command |
+| `done` | Add Windows Services command |
 | `considering` | Explore hotspot on/off toggle via scripting |
 | `considering` | PowerShell companion script |
 
