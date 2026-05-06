@@ -52,8 +52,8 @@ Works from a terminal, the Run dialog (`Win + R`), or a desktop shortcut. No ins
 ### Option 2 - Run from any terminal
 
 1. Copy `scripts\snapset.bat` to your preferred location
-2. Call it with its full or relative path:
-   `snapset hotspot`
+2. Call it with its full or relative path, e.g.:
+   `C:\wintools\snapset.bat hotspot`
 
 ### Option 3 - Desktop shortcut
 
@@ -111,6 +111,7 @@ snapset envars
 | `n` | `network` | Network & Internet |
 | `h` | `hotspot` | Mobile Hotspot settings |
 | `wi` | `wifi` | Wi-Fi settings |
+| `wm` | `wifiman` | Manage known Wi-Fi networks |
 | `vp` | `vpn` | VPN settings |
 | `px` | `proxy` | Proxy settings |
 | `av` | `advanced` | Advanced network settings |
@@ -122,7 +123,6 @@ snapset envars
 | Short | Long | Opens |
 |-------|------|-------|
 | `ad` | `adapters` | Classic adapter panel (DNS, protocol config) |
-| `wp` | `wifiprop` | Wi-Fi adapter properties |
 
 ### System settings
 
@@ -138,9 +138,9 @@ snapset envars
 Windows 11 has no dedicated `ms-settings:` URI for DNS.
 Use `snapset ad`, then right-click your adapter > Properties > Internet Protocol Version 4 (TCP/IPv4).
 
-**Wi-Fi adapter advanced properties**
-Use `snapset wp`, then right-click your adapter > Properties > Configure > Advanced tab.
-This exposes hardware-level settings like wireless mode, bandwidth, MAC randomisation, and roaming sensitivity.
+**Manage known Wi-Fi networks**
+Use `snapset wm` to open the known networks page directly.
+From here you can forget a network, change its priority, or inspect saved connections.
 
 **Data usage**
 `ms-settings:datausage` is non-functional on Windows 11 25H2.

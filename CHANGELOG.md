@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Replaced `wp/wifiprop` (duplicate of `ad/adapters`) with `wm/wifiman`, which opens Manage known Wi-Fi networks via `ms-settings:network-wifisettings`
+
 ## [1.0.0-beta] - 2026-05-05
 
 Initial release.
