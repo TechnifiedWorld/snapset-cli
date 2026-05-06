@@ -49,15 +49,18 @@ Example: `feat: add bt/bluetooth command`
 - Keep batch commands concise
 - Follow the existing short/long alias pattern for all new commands
 - Add a `rem` comment line above each new command group using this format:
-rem Short description, purpose and any relevant notes
 
-text
+```bat
+rem Short description, purpose and any relevant notes
+```
+
 - Section dividers use 60 dashes:
+
+```bat
 rem ------------------------------------------------------------
 rem SECTION NAME
 rem ------------------------------------------------------------
-
-text
+```
 
 ## License
 
