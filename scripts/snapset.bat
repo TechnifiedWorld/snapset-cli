@@ -1,7 +1,7 @@
 @echo off
 rem ============================================================
 rem  SnapSet by Technified World
-rem  Version : v1.0.0-beta
+rem  Version : v1.0.0
 rem  Purpose : Single command launcher for Windows 11 network
 rem            and system settings pages
 rem  Usage   : snapset <command>
@@ -10,7 +10,7 @@ rem  Repo    : https://github.com/TechnifiedWorld/snapset
 rem ============================================================
 
 rem version -- single source of truth for version string
-set "ver=v1.0.0-beta"
+set "ver=v1.0.0"
 
 rem setlocal restricts variable scope to this script only
 setlocal

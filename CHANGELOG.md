@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-05-06
+
 ### Changed
 - Replaced `wp/wifiprop` (duplicate of `ad/adapters`) with `wm/wifiman`, which opens Manage known Wi-Fi networks via `ms-settings:network-wifisettings`
 
@@ -24,5 +26,6 @@ Initial release.
 - Project logo (`docs/logo.png`)
 - Social preview image (`docs/social_preview.png`)
 
-[Unreleased]: https://github.com/TechnifiedWorld/snapset/compare/v1.0.0-beta...HEAD
+[Unreleased]: https://github.com/TechnifiedWorld/snapset/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/TechnifiedWorld/snapset/compare/v1.0.0-beta...v1.0.0
 [1.0.0-beta]: https://github.com/TechnifiedWorld/snapset/releases/tag/v1.0.0-beta
