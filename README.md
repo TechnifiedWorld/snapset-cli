@@ -7,7 +7,7 @@
 ![Platform](https://img.shields.io/badge/platform-Windows%2011-0078D4?style=flat-square&logo=windows11)
 ![Language](https://img.shields.io/badge/language-Batchfile-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
-![Version](https://img.shields.io/github/v/release/TechnifiedWorld/snapset?include_prereleases&label=version&style=flat-square&color=orange)
+![Version](https://img.shields.io/github/v/release/TechnifiedWorld/snapset-cli?include_prereleases&label=version&style=flat-square&color=orange)
 
 > A lightweight Windows 11 command-line launcher for fast, direct access to network and system settings, without navigating through multiple screens.
 
@@ -148,7 +148,7 @@ snapset envars
 | Short | Long | Opens |
 |-------|------|-------|
 | `ws` | `winsec` | Windows Security hub |
-| `fw` | `firewall` | Firewall and network protection |
+| `fw` | `firewall` | Defender Firewall with Advanced Security |
 
 ### Apps
 
@@ -181,8 +181,8 @@ Use `snapset sv` to open the Services panel.
 Starting, stopping, or changing service startup type requires an elevated (Administrator) terminal or UAC prompt.
 
 **Firewall**
-Use `snapset fw` to open Firewall and network protection.
-Click "Allow an app through firewall" to add or remove exceptions for specific applications.
+Use `snapset fw` to open Windows Defender Firewall with Advanced Security.
+This is the legacy MMC snap-in (`wf.msc`) — more powerful than the Settings page, with full inbound and outbound rule management. Elevation is required to create or modify rules.
 
 ---
 
@@ -191,9 +191,10 @@ Click "Allow an app through firewall" to add or remove exceptions for specific a
 | Command | Limitation |
 |---------|------------|
 | `du` / `datausage` | No dedicated URI on 25H2. Opens Advanced network settings. |
-| `et` / `ethernet` | Requires active wired adapter |
-| `sv` / `services` | Elevation required for start, stop, and configuration actions |
-| `ws` / `winsec` | Opens the standalone Windows Security app, not a Settings page |
+| `et` / `ethernet` | Requires active wired adapter. |
+| `sv` / `services` | Elevation required for start, stop, and configuration actions. |
+| `ws` / `winsec` | Opens the standalone Windows Security app, not a Settings page. |
+| `fw` / `firewall` | Uses `wf.msc` (legacy snap-in). Elevation required for rule changes. |
 
 ---
 
