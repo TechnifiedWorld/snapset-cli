@@ -1,7 +1,7 @@
 @echo off
 rem ============================================================
 rem  SnapSet by Technified World
-rem  Version : v1.1.0
+rem  Version : v1.2.0
 rem  Purpose : Single command launcher for Windows 11 network
 rem            and system settings pages
 rem  Usage   : snapset <command>
@@ -10,7 +10,7 @@ rem  Repo    : https://github.com/TechnifiedWorld/snapset
 rem ============================================================
 
 rem version -- single source of truth for version string
-set "ver=v1.1.0"
+set "ver=v1.2.0"
 
 rem setlocal restricts variable scope to this script only
 setlocal
@@ -86,6 +86,14 @@ rem Power and sleep -- sleep timers, battery saver, power plan selection
 if /i "%x%"=="pw"        start "" ms-settings:powersleep                        & goto :end
 if /i "%x%"=="power"     start "" ms-settings:powersleep                        & goto :end
 
+rem Sound -- output device, input device, volume mixer, spatial audio
+if /i "%x%"=="sn"        start "" ms-settings:sound                             & goto :end
+if /i "%x%"=="sound"     start "" ms-settings:sound                             & goto :end
+
+rem Storage -- disk usage overview and Storage Sense configuration
+if /i "%x%"=="st"        start "" ms-settings:storagesense                      & goto :end
+if /i "%x%"=="storage"   start "" ms-settings:storagesense                      & goto :end
+
 rem Windows Update -- check, pause, or configure updates
 if /i "%x%"=="wu"        start "" ms-settings:windowsupdate                     & goto :end
 if /i "%x%"=="update"    start "" ms-settings:windowsupdate                     & goto :end
@@ -102,6 +110,26 @@ rem Environment Variables -- opens dialog directly, skips System Properties
 rem Uses rundll32 to call EditEnvironmentVariables from sysdm.cpl
 if /i "%x%"=="ev"        start "" rundll32.exe sysdm.cpl,EditEnvironmentVariables & goto :end
 if /i "%x%"=="envars"    start "" rundll32.exe sysdm.cpl,EditEnvironmentVariables & goto :end
+
+rem ------------------------------------------------------------
+rem  SECURITY AND PRIVACY
+rem ------------------------------------------------------------
+
+rem Windows Security -- antivirus, device health, security alerts hub
+if /i "%x%"=="ws"        start "" ms-settings:windowsdefender                   & goto :end
+if /i "%x%"=="winsec"    start "" ms-settings:windowsdefender                   & goto :end
+
+rem Firewall -- firewall profile toggles, allow/block apps through firewall
+if /i "%x%"=="fw"        start "" ms-settings:windowsdefender-firewallandnetworkprotection & goto :end
+if /i "%x%"=="firewall"  start "" ms-settings:windowsdefender-firewallandnetworkprotection & goto :end
+
+rem ------------------------------------------------------------
+rem  APPS
+rem ------------------------------------------------------------
+
+rem Apps and Features -- uninstall, move, or repair installed apps
+if /i "%x%"=="ap"        start "" ms-settings:appsfeatures                      & goto :end
+if /i "%x%"=="apps"      start "" ms-settings:appsfeatures                      & goto :end
 
 rem ------------------------------------------------------------
 rem  UNRECOGNISED COMMAND -- argument provided but no match found
@@ -140,16 +168,22 @@ echo du       datausage    Data usage ^(via Advanced network settings^)
 echo ad       adapters     Adapter panel ^(DNS / protocol config^)
 echo ds       display      Display settings ^(resolution, scale, refresh^)
 echo pw       power        Power and sleep settings
+echo sn       sound        Sound settings ^(output, input, volume mixer^)
+echo st       storage      Storage and Storage Sense
 echo wu       update       Windows Update
 echo bt       bluetooth    Bluetooth devices
 echo sv       services     Windows Services ^(elevation required for changes^)
 echo ev       envars       Environment Variables ^(direct dialog^)
+echo ws       winsec       Windows Security hub
+echo fw       firewall     Firewall and network protection
+echo ap       apps         Apps and Features
 echo.
 echo Tips:
 echo - DNS config: snapset ad ^> right-click adapter ^> Properties ^> IPv4
 echo - Wi-Fi advanced: snapset ad ^> right-click ^> Properties ^> Configure ^> Advanced
 echo - Data usage: snapset du ^> click Data usage tab
 echo - Services: snapset sv ^> run as Administrator for start/stop actions
+echo - Firewall: snapset fw ^> Allow an app through firewall
 echo.
 pause
 endlocal

@@ -30,6 +30,9 @@ SnapSet eliminates that friction. One short command opens the exact settings pag
 | Start > Settings > System > Display | `snapset ds` |
 | Start > Settings > System > Power & sleep | `snapset pw` |
 | Start > Settings > Windows Update | `snapset wu` |
+| Start > Settings > System > Sound | `snapset sn` |
+| Start > Settings > Windows Security | `snapset ws` |
+| Start > Settings > Apps > Installed apps | `snapset ap` |
 
 Works from a terminal, the Run dialog (`Win + R`), or a desktop shortcut. No installation required. A single `.bat` file is all it takes.
 
@@ -133,10 +136,25 @@ snapset envars
 |-------|------|-------|
 | `ds` | `display` | Display settings (resolution, scale, refresh rate) |
 | `pw` | `power` | Power and sleep settings |
+| `sn` | `sound` | Sound settings (output, input, volume mixer) |
+| `st` | `storage` | Storage and Storage Sense |
 | `wu` | `update` | Windows Update |
 | `bt` | `bluetooth` | Bluetooth devices |
 | `sv` | `services` | Windows Services (elevation required for changes) |
 | `ev` | `envars` | Environment Variables (direct dialog) |
+
+### Security and privacy
+
+| Short | Long | Opens |
+|-------|------|-------|
+| `ws` | `winsec` | Windows Security hub |
+| `fw` | `firewall` | Firewall and network protection |
+
+### Apps
+
+| Short | Long | Opens |
+|-------|------|-------|
+| `ap` | `apps` | Apps and Features |
 
 ---
 
@@ -162,6 +180,10 @@ Windows 11 silently redirects to Settings Home when no wired adapter is present.
 Use `snapset sv` to open the Services panel.
 Starting, stopping, or changing service startup type requires an elevated (Administrator) terminal or UAC prompt.
 
+**Firewall**
+Use `snapset fw` to open Firewall and network protection.
+Click "Allow an app through firewall" to add or remove exceptions for specific applications.
+
 ---
 
 ## Known limitations
@@ -171,6 +193,7 @@ Starting, stopping, or changing service startup type requires an elevated (Admin
 | `du` / `datausage` | No dedicated URI on 25H2. Opens Advanced network settings. |
 | `et` / `ethernet` | Requires active wired adapter |
 | `sv` / `services` | Elevation required for start, stop, and configuration actions |
+| `ws` / `winsec` | Opens the standalone Windows Security app, not a Settings page |
 
 ---
 
@@ -183,6 +206,11 @@ Starting, stopping, or changing service startup type requires an elevated (Admin
 | `done` | Add Bluetooth settings commands |
 | `done` | Add Windows Update command |
 | `done` | Add Windows Services command |
+| `done` | Add sound settings command |
+| `done` | Add storage settings command |
+| `done` | Add Windows Security command |
+| `done` | Add Firewall command |
+| `done` | Add Apps and Features command |
 | `considering` | Explore hotspot on/off toggle via scripting |
 | `considering` | PowerShell companion script |
 

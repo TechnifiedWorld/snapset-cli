@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-06-12
+
+### Added
+- `sn` / `sound` - Sound settings (`ms-settings:sound`)
+- `st` / `storage` - Storage and Storage Sense (`ms-settings:storagesense`)
+- `ws` / `winsec` - Windows Security hub (`ms-settings:windowsdefender`)
+- `fw` / `firewall` - Firewall and network protection (`ms-settings:windowsdefender-firewallandnetworkprotection`)
+- `ap` / `apps` - Apps and Features (`ms-settings:appsfeatures`)
+
 ## [1.1.0] - 2026-05-06
 
 ### Added
@@ -35,14 +44,8 @@ Initial release.
 - Project logo (`docs/logo.png`)
 - Social preview image (`docs/social_preview.png`)
 
-[Unreleased]: https://github.com/TechnifiedWorld/snapset/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/TechnifiedWorld/snapset/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/TechnifiedWorld/snapset/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/TechnifiedWorld/snapset/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/TechnifiedWorld/snapset/compare/v1.0.0-beta...v1.0.0
 [1.0.0-beta]: https://github.com/TechnifiedWorld/snapset/releases/tag/v1.0.0-beta
-Two things changed from the original :
-
-New [1.1.0] section added between [Unreleased] and [1.0.0], listing all five new commands under ### Added.
-
-Comparison links at the bottom updated. The [Unreleased] link now compares from v1.1.0...HEAD, and a new [1.1.0] link compares v1.0.0...v1.1.0.
-
-Save this locally, then confirm and I will give you the full Git stage, commit, push, and PR steps.
