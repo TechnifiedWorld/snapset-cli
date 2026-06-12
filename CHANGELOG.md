@@ -7,13 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-06-12
+
+### Fixed
+- `fw` / `firewall` - Switched to `wf.msc` (Windows Defender Firewall with Advanced Security) for direct access to full inbound and outbound rule management
+- Updated help screen tip and README to reflect correct firewall behaviour
+
 ## [1.2.0] - 2026-06-12
 
 ### Added
 - `sn` / `sound` - Sound settings (`ms-settings:sound`)
 - `st` / `storage` - Storage and Storage Sense (`ms-settings:storagesense`)
 - `ws` / `winsec` - Windows Security hub (`ms-settings:windowsdefender`)
-- `fw` / `firewall` - Firewall and network protection (`ms-settings:windowsdefender-firewallandnetworkprotection`)
+- `fw` / `firewall` - Firewall and network protection (see v1.2.1 fix)
 - `ap` / `apps` - Apps and Features (`ms-settings:appsfeatures`)
 
 ## [1.1.0] - 2026-05-06
@@ -44,8 +50,9 @@ Initial release.
 - Project logo (`docs/logo.png`)
 - Social preview image (`docs/social_preview.png`)
 
-[Unreleased]: https://github.com/TechnifiedWorld/snapset/compare/v1.2.0...HEAD
-[1.2.0]: https://github.com/TechnifiedWorld/snapset/compare/v1.1.0...v1.2.0
-[1.1.0]: https://github.com/TechnifiedWorld/snapset/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/TechnifiedWorld/snapset/compare/v1.0.0-beta...v1.0.0
-[1.0.0-beta]: https://github.com/TechnifiedWorld/snapset/releases/tag/v1.0.0-beta
+[Unreleased]: https://github.com/TechnifiedWorld/snapset-cli/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/TechnifiedWorld/snapset-cli/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/TechnifiedWorld/snapset-cli/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/TechnifiedWorld/snapset-cli/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/TechnifiedWorld/snapset-cli/compare/v1.0.0-beta...v1.0.0
+[1.0.0-beta]: https://github.com/TechnifiedWorld/snapset-cli/releases/tag/v1.0.0-beta

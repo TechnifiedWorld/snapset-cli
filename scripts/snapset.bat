@@ -1,7 +1,7 @@
 @echo off
 rem ============================================================
 rem  SnapSet by Technified World
-rem  Version : v1.2.0
+rem  Version : v1.2.1
 rem  Purpose : Single command launcher for Windows 11 network
 rem            and system settings pages
 rem  Usage   : snapset <command>
@@ -10,7 +10,7 @@ rem  Repo    : https://github.com/TechnifiedWorld/snapset
 rem ============================================================
 
 rem version -- single source of truth for version string
-set "ver=v1.2.0"
+set "ver=v1.2.1"
 
 rem setlocal restricts variable scope to this script only
 setlocal
@@ -119,9 +119,9 @@ rem Windows Security -- antivirus, device health, security alerts hub
 if /i "%x%"=="ws"        start "" ms-settings:windowsdefender                   & goto :end
 if /i "%x%"=="winsec"    start "" ms-settings:windowsdefender                   & goto :end
 
-rem Firewall -- firewall profile toggles, allow/block apps through firewall
-if /i "%x%"=="fw"        start "" ms-settings:windowsdefender-firewallandnetworkprotection & goto :end
-if /i "%x%"=="firewall"  start "" ms-settings:windowsdefender-firewallandnetworkprotection & goto :end
+rem Firewall -- Windows Defender Firewall with Advanced Security (elevation required for changes)
+if /i "%x%"=="fw"        start "" wf.msc                                          & goto :end
+if /i "%x%"=="firewall"  start "" wf.msc                                          & goto :end
 
 rem ------------------------------------------------------------
 rem  APPS
@@ -183,7 +183,7 @@ echo - DNS config: snapset ad ^> right-click adapter ^> Properties ^> IPv4
 echo - Wi-Fi advanced: snapset ad ^> right-click ^> Properties ^> Configure ^> Advanced
 echo - Data usage: snapset du ^> click Data usage tab
 echo - Services: snapset sv ^> run as Administrator for start/stop actions
-echo - Firewall: snapset fw ^> Allow an app through firewall
+echo - Firewall: snapset fw ^> opens Defender Firewall with Advanced Security
 echo.
 pause
 endlocal
