@@ -9,7 +9,7 @@
 ![Language](https://img.shields.io/badge/language-Batchfile-green?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 ![Version](https://img.shields.io/github/v/release/TechnifiedWorld/snapset-cli?include_prereleases&label=version&style=flat-square&color=orange)
-<p align="center">
+</p>
 
 > A lightweight Windows 11 command-line launcher for fast, direct access to network and system settings, without navigating through multiple screens.
 
